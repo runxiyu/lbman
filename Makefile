@@ -1,11 +1,14 @@
 include config.mk
 
-all: $(PAGES:=.html) links
+all: $(PAGES:=.txt) $(PAGES:=.html) links
 
-.SUFFIXES: .7 .html
+.SUFFIXES: .7 .html .txt
 
 .7.html:
 	mandoc -K utf-8 -O man=./%N.html -T html $< > $@
+
+.7.txt:
+	mandoc -K utf-8 -T utf8 $< > $@
 
 clean:
 	rm -f *.html
