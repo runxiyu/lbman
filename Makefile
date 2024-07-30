@@ -1,6 +1,6 @@
 include config.mk
 
-all: $(PAGES:=.html)
+all: $(PAGES:=.html) links
 
 .SUFFIXES: .7 .html
 
@@ -9,3 +9,6 @@ all: $(PAGES:=.html)
 
 clean:
 	rm -f *.html
+
+links:
+	ln -sf $(shell pwd)/libreboot.html index.html
