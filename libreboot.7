@@ -1,0 +1,57 @@
+.Dd July 30, 2024
+.Dt libreboot 7
+.Os "Libreboot"
+.Sh NAME
+.Pp
+.Nm libreboot
+.Nd a coreboot distribution
+.
+.Sh DESCRIPTION
+.Pp
+The
+.Nm
+project provides free, open source, and libre boot firmware based on
+coreboot, replacing proprietary BIOS/UEFI firmware on specific Intel/AMD
+x86 and ARM based motherboards. It initialises the hardware (e.g. memory
+controller, CPU, peripherals) and starts a bootloader for your operating
+system. Linux and BSD are well-supported.
+.Pp
+We believe the freedom to study, share, modify and use software, without
+any restriction, is one of the fundamental human rights that everyone
+must have. In this context, software freedom matters. Your freedom
+matters. Education matters. Right to repair matters; Libreboot lets you
+continue to use your hardware, with continued firmware updates. All of
+this is why Libreboot exists.
+.
+.Sh MINIFREE
+Minifree, Ltd. sells devices with Libreboot preinstalled, and provides a
+send-in installation service for supported devices.
+The founder and lead developer of Libreboot, Leah Rowe, also owns
+and operates Minifree; sales provide funding for Libreboot.
+.Sh HARDWARE SUPPORT
+.Pp See
+.Xr libreboot-hardware 7
+.
+.Sh OPERATING SYSTEMS
+.Pp
+For documentation in booting operating systems, please see their
+respective manual pages:
+.Bl -tag
+.It Linux
+.Xr libreboot-linux 7
+.It BSDs
+.Xr libreboot-bsd 7
+.El
+.Sh SUPPORT
+.Pp
+Help is available via
+.Lk https://web.libera.chat/#libreboot #libreboot
+on the
+.Lk https://libera.chat Libera
+IRC network.
+.Sh SEE ALSO
+.Bl -item
+.It
+.Lk https://minifree.org Minifree, Ltd.
+.El
+.\" vim: tw=72
