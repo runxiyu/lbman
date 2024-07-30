@@ -1,14 +1,22 @@
 include config.mk
 
-all: $(PAGES:=.txt) $(PAGES:=.html) links
+all: txt html links
 
-.SUFFIXES: .7 .html .txt
+txt: $(PAGES:=.txt)
+html: $(PAGES:=.html)
+ps: $(PAGES:=.ps)
+pdf: $(PAGES:=.pdf)
 
-.7.html:
-	mandoc -K utf-8 -O man=./%N.html -T html $< > $@
+.SUFFIXES: .7 .html .txt .ps .pdf
 
 .7.txt:
-	mandoc -K utf-8 -T utf8 $< > $@
+	mandoc -K utf-8 -T utf8 $< | ./colb.c > $@
+.7.html:
+	mandoc -K utf-8 -O man=./%N.html -T html $< > $@
+.7.ps:
+	mandoc -T ps $< > $@
+.7.pdf:
+	mandoc -T ps $< > $@
 
 clean:
 	rm -f *.html
